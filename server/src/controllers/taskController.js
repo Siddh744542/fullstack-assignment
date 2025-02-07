@@ -15,8 +15,6 @@ export const getAllTasks = async (req, res) => {
 export const createTask = async (req, res) => {
   try {
     const { task_name, task_description, due_date, status } = req.body;
-    console.log(req.body);
-
     if (!task_name || !task_description) {
       return res
         .status(400)

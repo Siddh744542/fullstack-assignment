@@ -80,6 +80,7 @@ function AddTask() {
                   name="dueDate"
                   onChange={handleChange}
                   value={task.dueDate}
+                  min={new Date().toISOString().split("T")[0]}
                   className="px-2 py-1 border border-gray-300 rounded-lg focus:outline-none focus:border-action-500 text-gray-700 transition-colors min-w-0"
                 />
               </div>
@@ -94,9 +95,9 @@ function AddTask() {
                   onChange={handleChange}
                   className="border border-gray-300 rounded-md p-2 text-gray-700 text-sm focus:ring-blue-500"
                 >
-                  <option value="pending">Pending</option>
-                  <option value="progress">In Progress</option>
-                  <option value="completed">Completed</option>
+                  <option value="Pending">Pending</option>
+                  <option value="In progress">In Progress</option>
+                  <option value="Completed">Completed</option>
                 </select>
               </div>
             </div>

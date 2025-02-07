@@ -1,27 +1,24 @@
 import { useTaskData } from "../api/query/taskQuery";
 import TaskItem from "./TaskItem";
+import { Loader } from "./loader.jsx";
+export const TaskManager = () => {
+  const { data: tasks, isLoading, isError } = useTaskData();
 
-export const TaskManager = ({ userId, selectedMonth }) => {
-  const {
-    data: tasks,
-    isLoading,
-    isError,
-  } = useTaskData(userId, selectedMonth);
-
-  if (isLoading) return <p>Loading tasks...</p>;
+  if (isLoading) return <Loader />;
   if (isError) return <p>Failed to load tasks.</p>;
 
   return (
-    <div className="p-6 mx-auto bg-white shadow-md rounded-2xl">
+    <div className="h-[calc(100vh-180px)] px-6 py-2 mx-auto overflow-y-auto bg-white shadow-md rounded-2xl">
       <div>
         {tasks && tasks.length > 0 ? (
-          tasks.map((task, index) => (
+          tasks.map((task) => (
             <TaskItem
-              key={index}
+              key={task.id}
               title={task.task_name}
               description={task.task_description}
               dueDate={task.due_date}
               status={task.status}
+              id={task.id}
             />
           ))
         ) : (
