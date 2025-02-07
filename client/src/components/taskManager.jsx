@@ -22,7 +22,7 @@ export const TaskManager = () => {
             />
           ))
         ) : (
-          <p>No tasks available.</p>
+          <p className="text-center text-gray-500 ">No tasks available.</p>
         )}
       </div>
     </div>

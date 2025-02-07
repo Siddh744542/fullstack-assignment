@@ -4,7 +4,6 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
-import { PrismaClient } from "@prisma/client";
 
 import taskRoute from "./routes/taskRoute.js";
 
