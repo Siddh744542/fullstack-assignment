@@ -1,4 +1,4 @@
-import { useTaskData } from "../api/query/taskQuery";
+import { useTaskData } from "../reactQuery/query/taskQuery";
 import TaskItem from "./TaskItem";
 import { Loader } from "./loader.jsx";
 export const TaskManager = () => {
